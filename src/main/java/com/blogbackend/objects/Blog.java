@@ -37,6 +37,15 @@ public class Blog {
         return blogTitle;
     }
 
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "blogId='" + blogId + '\'' +
+                ", blogTitle='" + blogTitle + '\'' +
+                ", blogDescription='" + blogDescription + '\'' +
+                '}';
+    }
+
     public String getBlogDescription() {
         return blogDescription;
     }

@@ -27,4 +27,12 @@ public class ServerResponse<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "ServerResponse{" +
+                "statusCode=" + statusCode +
+                ", data=" + data +
+                '}';
+    }
 }

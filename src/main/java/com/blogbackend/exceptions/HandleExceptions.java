@@ -18,4 +18,9 @@ public class HandleExceptions {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorObject(new Date(), 404, noSuchElementException.getMessage(), webRequest.getDescription(false)));
     }
 
+    @ExceptionHandler(InvalidObjectException.class)
+    public ResponseEntity<ErrorObject> handleInvalidObjectException(InvalidObjectException invalidObjectException, WebRequest webRequest) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorObject(new Date(), 400, invalidObjectException.getMessage(), webRequest.getDescription(false)));
+    }
+
 }

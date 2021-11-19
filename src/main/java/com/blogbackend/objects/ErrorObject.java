@@ -31,6 +31,16 @@ public class ErrorObject {
         return statusCode;
     }
 
+    @Override
+    public String toString() {
+        return "ErrorObject{" +
+                "timeStamp=" + timeStamp +
+                ", statusCode=" + statusCode +
+                ", message='" + message + '\'' +
+                ", path='" + path + '\'' +
+                '}';
+    }
+
     public void setPath(String path) {
         this.path = path;
     }

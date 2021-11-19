@@ -22,6 +22,10 @@ public class BlogService {
         return new Blog("001", "First", "First Description");
     }
 
+    public Blog newBlog(Blog blog) {
+        return new Blog("001", "First", "First Description");
+    }
+
     public Blog updateBlog(String id) {
         return new Blog("001", "First", "First Description");
     }
