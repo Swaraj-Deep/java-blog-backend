@@ -23,7 +23,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/{id}")
-    public ServerResponse<Blog> getBlog(@PathVariable String id) {
-        return new ServerResponse<Blog>(200, this._getBlogController.getBlog(id));
+    public ResponseEntity<ServerResponse<Blog>> getBlog(@PathVariable String id) {
+        return ResponseEntity.status(HttpStatus.OK).body(new ServerResponse<Blog>(200, this._getBlogController.getBlog(id)));
     }
 }

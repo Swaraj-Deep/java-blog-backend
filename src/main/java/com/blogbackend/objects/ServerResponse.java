@@ -1,5 +1,7 @@
 package com.blogbackend.objects;
 
+import org.springframework.http.HttpStatus;
+
 public class ServerResponse<T> {
 
     private int statusCode;
