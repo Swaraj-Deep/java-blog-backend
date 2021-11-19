@@ -5,6 +5,7 @@ import com.blogbackend.objects.ServerResponse;
 import com.blogbackend.services.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -13,9 +14,15 @@ import java.util.List;
 public class BlogController {
 
     @Autowired
-    private BlogService _blogService;
+    private GetBlogController _getBlogController;
+
     @GetMapping("/blogs")
     public List<Blog> getBlog() {
-        return _blogService.getAllBlogs();
+        return this._getBlogController.getAllBlogs();
+    }
+
+    @GetMapping("/blogs/{id}")
+    public Blog getBlog(@PathVariable String id) {
+        return this._getBlogController.getBlog(id);
     }
 }
