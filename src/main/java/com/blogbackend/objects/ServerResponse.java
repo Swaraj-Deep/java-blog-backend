@@ -1,33 +1,28 @@
 package com.blogbackend.objects;
 
-public class ServerResponse {
+public class ServerResponse<T> {
 
     private int statusCode;
-    private String message;
+    private T data;
 
-    public ServerResponse() {
-        statusCode = 0;
-        message = "";
-    }
-
-    public ServerResponse(int statusCode, String message) {
+    public ServerResponse(int statusCode, T data) {
         this.statusCode = statusCode;
-        this.message = message;
+        this.data = data;
     }
 
     public int getStatusCode() {
-        return statusCode;
+        return this.statusCode;
     }
 
-    public String getMessage() {
-        return message;
+    public T getData() {
+        return this.data;
     }
 
     public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setData(T data) {
+        this.data = data;
     }
 }
